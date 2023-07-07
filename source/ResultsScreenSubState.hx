@@ -38,7 +38,7 @@ class ResultsScreenSubState extends MusicBeatSubstate {
 		background.antialiasing = ClientPrefs.globalAntialiasing;
 		add(background);
 
-		resultsText = new FlxText(5, 0, 0, 'RESULTS', 72);
+		resultsText = new FlxText(5, 0, 0, 'RESULTADOS', 72);
 		resultsText.scrollFactor.set();
 		if (ClientPrefs.gameStyle == 'SB Engine') {
 			resultsText.setFormat("Bahnschrift", 48, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -123,7 +123,7 @@ class ResultsScreenSubState extends MusicBeatSubstate {
 		add(difficultyNameTxt);
 
 		judgementCounterTxt = new FlxText(0, difficultyNameTxt.y + difficultyNameTxt.height + 45, FlxG.width, '', 86);
-		judgementCounterTxt.text = 'Score: ' + campaignScore + '\nMisses: ' + songMisses + '\nAccuracy: ' + ratingPercent + '%\nRating: ' + ratingName;
+		judgementCounterTxt.text = 'Pontuação: ' + campaignScore + '\nErros: ' + songMisses + '\nPrecisão: ' + ratingPercent + '%\nAvaliação: ' + ratingName;
 		judgementCounterTxt.scrollFactor.set();
 		if (ClientPrefs.gameStyle == 'SB Engine') {
 			judgementCounterTxt.setFormat("Bahnschrift", 36, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
