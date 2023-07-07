@@ -382,19 +382,19 @@ class PlayState extends MusicBeatState {
 		// Ratings
 		ratingsData.push(new Rating('sick')); // default rating
 
-		var rating:Rating = new Rating('good');
+		var rating:Rating = new Rating('bom');
 		rating.ratingMod = 0.7;
 		rating.score = 200;
 		rating.noteSplash = false;
 		ratingsData.push(rating);
 
-		var rating:Rating = new Rating('bad');
+		var rating:Rating = new Rating('mal');
 		rating.ratingMod = 0.4;
 		rating.score = 100;
 		rating.noteSplash = false;
 		ratingsData.push(rating);
 
-		var rating:Rating = new Rating('freak');
+		var rating:Rating = new Rating('doido');
 		rating.ratingMod = 0;
 		rating.score = 50;
 		rating.noteSplash = false;
@@ -402,31 +402,31 @@ class PlayState extends MusicBeatState {
 
 		if (ClientPrefs.gameStyle == 'SB Engine') {
 			ratingStuff = [
-				['You are gonna die!', 0.2], // From 0% to 19%
-                ['Freak', 0.4], // From 20% to 39%
-                ['Really bad', 0.5], // From 40% to 49%
-                ['Bad', 0.6], // From 50% to 59%
-                ['Nice', 0.69], // From 60% to 68%
-                ['Epic', 0.7], // 69%
-                ['Good', 0.8], // From 70% to 79%
-                ['Very good', 0.9], // From 80% to 89%
-                ['Sick!', 1], // From 90% to 99%
-                ['Perfect!!', 1] // The value on this one isn't used actually, since Perfect is always "1"
+			     [voce vai morrer!', 0.2], // From 0% to 19%
+                ['doido', 0.4], // From 20% to 39%
+                ['Realmente ruim', 0.5], // From 40% to 49%
+                ['Ruim', 0.6], // From 50% to 59%
+                ['Legal', 0.69], // From 60% to 68%
+                ['Epico', 0.7], // 69%
+                ['Bom', 0.8], // From 70% to 79%
+                ['Muito bom', 0.9], // From 80% to 89%
+                ['Incrivel!', 1], // From 90% to 99%
+                ['Perfeito!!', 1] // The value on this one isn't used actually, since Perfect is always "1"
 		];
 		}
 
 		if (ClientPrefs.gameStyle == 'Psych Engine') {
 			ratingStuff = [
-			    ['You Suck!', 0.2], //From 0% to 19%
+				[Voce é um merda!', 0.2], //From 0% to 19%
 				['####', 0.4], //From 20% to 39%
-				['Bad', 0.5], //From 40% to 49%
+				['Ruim', 0.5], //From 40% to 49%
 				['Bruh', 0.6], //From 50% to 59%
 				['Meh', 0.69], //From 60% to 68%
-				['Nice', 0.7], //69%
-				['Good', 0.8], //From 70% to 79%
-				['Great', 0.9], //From 80% to 89%
-				['Sick!', 1], //From 90% to 99%
-				['Perfect!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
+				['Legal', 0.7], //69%
+				['Bom', 0.8], //From 70% to 79%
+				['Muito bom', 0.9], //From 80% to 89%
+				['Incrivel!', 1], //From 90% to 99%
+				['Perfeito!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
 		];
 		}
 
@@ -2009,7 +2009,7 @@ class PlayState extends MusicBeatState {
 			return;
 		}
 		#else
-		FlxG.log.warn('Platform not supported!');
+		FlxG.log.warn('Sistema Não Suportado!');
 		startAndEnd();
 		return;
 		#end
@@ -2054,7 +2054,7 @@ class PlayState extends MusicBeatState {
 			psychDialogue.cameras = [camHUD];
 			add(psychDialogue);
 		} else {
-			FlxG.log.warn('Your dialogue file is badly formatted!');
+			FlxG.log.warn('Seu arquivo Diálogo esta mal preparado!');
 			if (endingSong) {
 				endSong();
 			} else {
@@ -2389,25 +2389,25 @@ class PlayState extends MusicBeatState {
 
 	public function updateScore(miss:Bool = false) {
 		if (ClientPrefs.gameStyle == 'SB Engine') {
-			scoreTxt.text = 'Score: ' + songScore + ' | Combo breaks: ' + songMisses + ' | Accruracy: ' + Highscore.floorDecimal(ratingPercent * 100, 2)
+			scoreTxt.text = 'Pontuação: ' + songScore + ' | Erros: ' + songMisses + ' | Precisão: ' + Highscore.floorDecimal(ratingPercent * 100, 2)
 				+ '%' + ' | ' + ratingName + ' [' + ratingFC + ']';
 			judgementCounterTxt.text = 'Sicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nFreaks: ${freaks}';
 		}
 
 		if (ClientPrefs.gameStyle == 'Psych Engine') {
-			scoreTxt.text = 'Score: '
+			scoreTxt.text = 'Pontuação: '
 				+ songScore
-				+ ' | Misses: '
+				+ ' | Erros: '
 				+ songMisses
-				+ ' | Rating: '
+				+ ' | Avaliação: '
 				+ ratingName
 				+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) - $ratingFC' : '');
 			judgementCounterTxt.text = 'Sicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\n####s: ${freaks}';
 		}
 
 		if (ClientPrefs.gameStyle == 'Better UI') {
-			scoreTxt.text = 'NPS: ' + nps + ' // Average: ' + Math.round(averageMs) + 'ms'
-			+ ' // Health: ${Std.string(Math.floor(Std.parseFloat(Std.string((healthCounter) / 2))))} %' + ' // Score: ' + songScore + ' // Misses: ' + songMisses + ' // Accruracy: '
+			scoreTxt.text = 'NPS: ' + nps + ' // Media: ' + Math.round(averageMs) + 'ms'
+			+ ' // Health: ${Std.string(Math.floor(Std.parseFloat(Std.string((healthCounter) / 2))))} %' + ' // Pontuação: ' + songScore + ' // Erros: ' + songMisses + ' // Precisão: '
 				+ Highscore.floorDecimal(ratingPercent * 100, 2) + '%' + ' // ' + ratingName + ' (' + ratingFC + ')';
 			judgementCounterTxt.text = 'Sicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\n####s: ${freaks}';
 		}
@@ -5377,7 +5377,7 @@ class PlayState extends MusicBeatState {
 			if (songMisses > 0 && songMisses < 10)
 				ratingFC = "SDCB";
 			else if (songMisses >= 10)
-				ratingFC = "Clear";
+				ratingFC = "Limpo";
 		}
 		updateScore(badHit);
 		setOnLuas('rating', ratingPercent);
