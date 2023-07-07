@@ -82,7 +82,7 @@ class StoryModeState extends MusicBeatState {
 			txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, RIGHT);
 		}
 
-		if (ClientPrefs.gameStyle == 'interface do usuário melhor') {
+		if (ClientPrefs.gameStyle == 'Better UI') {
 			txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, RIGHT);
 		}
 
