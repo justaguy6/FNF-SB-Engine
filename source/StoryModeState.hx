@@ -60,7 +60,7 @@ class StoryModeState extends MusicBeatState {
 			curWeek = 0;
 		persistentUpdate = persistentDraw = true;
 
-		scoreText = new FlxText(10, 10, 0, "SCORE: 49324858", 36);
+		scoreText = new FlxText(10, 10, 0, "PONTUAÇÃO: 49324858", 36);
 		if (ClientPrefs.gameStyle == 'SB Engine') {
 			scoreText.setFormat("Bahnschrift", 32);
 		}
@@ -82,14 +82,14 @@ class StoryModeState extends MusicBeatState {
 			txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, RIGHT);
 		}
 
-		if (ClientPrefs.gameStyle == 'Better UI') {
+		if (ClientPrefs.gameStyle == 'interface do usuário melhor') {
 			txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, RIGHT);
 		}
 
 		txtWeekTitle.alpha = 0.7;
 
 		var rankText:FlxText = new FlxText(0, 10);
-		rankText.text = 'RANK: GREAT';
+		rankText.text = 'RANK: OTIMO';
 		if (ClientPrefs.gameStyle == 'SB Engine') {
 			rankText.setFormat("Bahnschrift", 32);
 		}
@@ -232,7 +232,7 @@ class StoryModeState extends MusicBeatState {
 		if (Math.abs(intendedScore - lerpScore) < 10)
 			lerpScore = intendedScore;
 
-		scoreText.text = "WEEK SCORE:" + lerpScore;
+		scoreText.text = "PONTUAÇÃO DA SEMANA:" + lerpScore;
 
 		// FlxG.watch.addQuick('font', scoreText.font);
 
