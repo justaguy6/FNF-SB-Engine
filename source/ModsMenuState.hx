@@ -94,7 +94,7 @@ class ModsMenuState extends MusicBeatState {
 		}
 		add(velocityBG);
 
-		noModsTxt = new FlxText(0, 0, FlxG.width, "NO MODS INSTALLED\nPRESS BACK TO EXIT AND INSTALL A MOD", 48);
+		noModsTxt = new FlxText(0, 0, FlxG.width, "SEM MODS INSTALADOS\nPRESSIONE B PARA VOLTAR E INSTALE UM", 48);
 		if (FlxG.random.bool(0.1))
 			noModsTxt.text += '\nFREAK.'; // meanie
 		if (ClientPrefs.gameStyle == 'SB Engine') {
@@ -260,7 +260,7 @@ class ModsMenuState extends MusicBeatState {
 		visibleWhenHasMods.push(buttonTop);
 
 		startX -= 190;
-		buttonDisableAll = new FlxButton(startX, 0, "DISABLE ALL", function() {
+		buttonDisableAll = new FlxButton(startX, 0, "DESATIVAR TUDO", function() {
 			for (i in modsList) {
 				i[1] = false;
 			}
@@ -294,7 +294,7 @@ class ModsMenuState extends MusicBeatState {
 		visibleWhenHasMods.push(buttonDisableAll);
 
 		startX -= 190;
-		buttonEnableAll = new FlxButton(startX, 0, "ENABLE ALL", function() {
+		buttonEnableAll = new FlxButton(startX, 0, "ATIVAR TUDO", function() {
 			for (i in modsList) {
 				i[1] = true;
 			}
